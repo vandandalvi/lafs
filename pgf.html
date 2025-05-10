@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -7,13 +8,13 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;400;600&display=swap');
-        
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         body {
             font-family: 'Poppins', sans-serif;
             background-color: #ffe6ea;
@@ -21,7 +22,7 @@
             overflow-x: hidden;
             position: relative;
         }
-        
+
         .section {
             min-height: 100vh;
             padding: 2rem;
@@ -37,26 +38,27 @@
             pointer-events: none;
             transition: opacity 0.5s ease-in-out;
         }
-        
+
         .section.active {
             opacity: 1;
             pointer-events: all;
         }
-        
-        h1, h2 {
+
+        h1,
+        h2 {
             font-family: 'Pacifico', cursive;
             margin-bottom: 1.5rem;
             text-align: center;
             color: #ff5c8d;
         }
-        
+
         p {
             margin-bottom: 1rem;
             line-height: 1.6;
             text-align: center;
             max-width: 600px;
         }
-        
+
         .btn {
             background-color: #ff5c8d;
             color: white;
@@ -70,18 +72,18 @@
             box-shadow: 0 4px 8px rgba(255, 92, 141, 0.3);
             font-family: 'Poppins', sans-serif;
         }
-        
+
         .btn:hover {
             transform: translateY(-3px);
             box-shadow: 0 6px 12px rgba(255, 92, 141, 0.4);
         }
-        
+
         /* Landing Page */
         #landing {
             text-align: center;
             background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><g fill-opacity="0.1" fill="%23ff5c8d"><circle cx="10" cy="10" r="2"/><circle cx="30" cy="10" r="2"/><circle cx="50" cy="10" r="2"/><circle cx="70" cy="10" r="2"/><circle cx="90" cy="10" r="2"/><circle cx="10" cy="30" r="2"/><circle cx="30" cy="30" r="2"/><circle cx="50" cy="30" r="2"/><circle cx="70" cy="30" r="2"/><circle cx="90" cy="30" r="2"/><circle cx="10" cy="50" r="2"/><circle cx="30" cy="50" r="2"/><circle cx="50" cy="50" r="2"/><circle cx="70" cy="50" r="2"/><circle cx="90" cy="50" r="2"/><circle cx="10" cy="70" r="2"/><circle cx="30" cy="70" r="2"/><circle cx="50" cy="70" r="2"/><circle cx="70" cy="70" r="2"/><circle cx="90" cy="70" r="2"/><circle cx="10" cy="90" r="2"/><circle cx="30" cy="90" r="2"/><circle cx="50" cy="90" r="2"/><circle cx="70" cy="90" r="2"/><circle cx="90" cy="90" r="2"/></g></svg>');
         }
-        
+
         .envelope {
             width: 150px;
             height: 100px;
@@ -93,12 +95,12 @@
             transition: all 0.3s ease;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
-        
+
         .envelope:hover {
             transform: translateY(-5px);
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
         }
-        
+
         .envelope:before {
             content: '';
             position: absolute;
@@ -114,12 +116,12 @@
             transition: all 0.4s ease;
             z-index: 2;
         }
-        
+
         .envelope.open:before {
             transform: rotateX(180deg);
             z-index: 0;
         }
-        
+
         .letter {
             position: absolute;
             background-color: white;
@@ -139,11 +141,11 @@
             text-align: center;
             overflow: hidden;
         }
-        
+
         .envelope.open .letter {
             transform: translateY(-60px);
         }
-        
+
         .cat-gif {
             position: absolute;
             bottom: 20px;
@@ -154,18 +156,18 @@
             overflow: hidden;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
-        
+
         .cat-gif img {
             width: 100%;
             height: 100%;
             object-fit: cover;
         }
-        
+
         /* Letter Section */
         #letter {
             padding: 3rem 1.5rem;
         }
-        
+
         .letter-content {
             background-color: white;
             padding: 2rem;
@@ -174,14 +176,14 @@
             max-width: 600px;
             position: relative;
         }
-        
+
         .letter-text {
             min-height: 300px;
             display: flex;
             flex-direction: column;
             justify-content: center;
         }
-        
+
         .typewriter {
             overflow: hidden;
             border-right: 2px solid #ff5c8d;
@@ -190,12 +192,12 @@
             letter-spacing: 0.1em;
             animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
         }
-        
+
         /* Chat Roadmap */
         #chat-roadmap {
             text-align: center;
         }
-        
+
         .timeline {
             display: flex;
             flex-wrap: nowrap;
@@ -206,20 +208,20 @@
             scrollbar-color: #ff5c8d #ffe6ea;
             -webkit-overflow-scrolling: touch;
         }
-        
+
         .timeline::-webkit-scrollbar {
             height: 8px;
         }
-        
+
         .timeline::-webkit-scrollbar-track {
             background: #ffe6ea;
         }
-        
+
         .timeline::-webkit-scrollbar-thumb {
             background-color: #ff5c8d;
             border-radius: 20px;
         }
-        
+
         .chat-item {
             flex: 0 0 auto;
             width: 250px;
@@ -230,7 +232,7 @@
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
             position: relative;
         }
-        
+
         .chat-item:after {
             content: '';
             position: absolute;
@@ -242,7 +244,7 @@
             background-color: #ff5c8d;
             border-radius: 50%;
         }
-        
+
         .chat-item:before {
             content: '';
             position: absolute;
@@ -252,7 +254,7 @@
             height: 2px;
             background-color: #ff5c8d;
         }
-        
+
         .chat-screenshot {
             width: 100%;
             height: 150px;
@@ -261,38 +263,38 @@
             margin-bottom: 1rem;
             overflow: hidden;
         }
-        
+
         .chat-screenshot img {
             width: 100%;
             height: 100%;
             object-fit: cover;
         }
-        
+
         .chat-caption {
             font-size: 0.9rem;
             color: #ff5c8d;
             font-weight: 600;
         }
-        
+
         /* Photo Compliments */
         #photos {
             text-align: center;
         }
-        
+
         .photo-gallery {
             display: flex;
             flex-direction: column;
             gap: 2rem;
             max-width: 600px;
         }
-        
+
         .photo-item {
             background-color: white;
             border-radius: 10px;
             padding: 1rem;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
         }
-        
+
         .photo-frame {
             width: 100%;
             height: 300px;
@@ -301,24 +303,24 @@
             margin-bottom: 1rem;
             background-color: #f0f0f0;
         }
-        
+
         .photo-frame img {
             width: 100%;
             height: 100%;
             object-fit: cover;
         }
-        
+
         .photo-caption {
             font-family: 'Pacifico', cursive;
             color: #ff5c8d;
             font-size: 1.2rem;
         }
-        
+
         /* Voice Note Section */
         #voice-note {
             text-align: center;
         }
-        
+
         .audio-player {
             background-color: white;
             border-radius: 50px;
@@ -329,7 +331,7 @@
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
             margin: 2rem 0;
         }
-        
+
         .play-button {
             width: 60px;
             height: 60px;
@@ -344,17 +346,17 @@
             box-shadow: 0 4px 8px rgba(255, 92, 141, 0.3);
             transition: all 0.3s ease;
         }
-        
+
         .play-button:hover {
             transform: scale(1.05);
             box-shadow: 0 6px 12px rgba(255, 92, 141, 0.4);
         }
-        
+
         /* Proposal Page */
         #proposal {
             text-align: center;
         }
-        
+
         .proposal-box {
             background-color: white;
             border-radius: 15px;
@@ -363,27 +365,27 @@
             max-width: 500px;
             position: relative;
         }
-        
+
         .proposal-text {
             font-size: 1.5rem;
             font-weight: 600;
             margin-bottom: 2rem;
             color: #ff5c8d;
         }
-        
+
         .proposal-subtext {
             font-size: 1rem;
             margin-bottom: 2rem;
             font-style: italic;
         }
-        
+
         .proposal-buttons {
             display: flex;
             justify-content: center;
             gap: 1rem;
             flex-wrap: wrap;
         }
-        
+
         /* Confetti */
         canvas {
             position: fixed;
@@ -395,55 +397,69 @@
             z-index: 9999;
             display: none;
         }
-        
+
         /* Success page */
         #success {
             text-align: center;
             display: none;
         }
-        
+
         .heart-animation {
             font-size: 5rem;
             color: #ff5c8d;
             animation: heartbeat 1s infinite;
         }
-        
+
         @keyframes heartbeat {
-            0% { transform: scale(1); }
-            25% { transform: scale(1.1); }
-            50% { transform: scale(1); }
-            75% { transform: scale(1.1); }
-            100% { transform: scale(1); }
+            0% {
+                transform: scale(1);
+            }
+
+            25% {
+                transform: scale(1.1);
+            }
+
+            50% {
+                transform: scale(1);
+            }
+
+            75% {
+                transform: scale(1.1);
+            }
+
+            100% {
+                transform: scale(1);
+            }
         }
-        
+
         /* Mobile optimizations */
         @media (max-width: 768px) {
             .section {
                 padding: 1.5rem;
             }
-            
+
             .letter-content {
                 padding: 1.5rem;
             }
-            
+
             .proposal-buttons {
                 flex-direction: column;
                 gap: 1rem;
             }
-            
+
             .btn {
                 width: 100%;
             }
-            
+
             .chat-item {
                 width: 200px;
             }
-            
+
             .photo-frame {
                 height: 250px;
             }
         }
-        
+
         /* Navigation */
         .navigation {
             position: fixed;
@@ -454,7 +470,7 @@
             gap: 10px;
             z-index: 100;
         }
-        
+
         .nav-dot {
             width: 12px;
             height: 12px;
@@ -463,16 +479,16 @@
             cursor: pointer;
             transition: all 0.3s ease;
         }
-        
+
         .nav-dot.active {
             background-color: #ff5c8d;
             transform: scale(1.2);
         }
-        
+
         .hidden {
             display: none;
         }
-        
+
         /* Progress indicator */
         .progress-container {
             position: fixed;
@@ -483,15 +499,42 @@
             background-color: #ffb6c1;
             z-index: 1000;
         }
-        
+
         .progress-bar {
             height: 100%;
             background-color: #ff5c8d;
             width: 0%;
             transition: width 0.3s ease-in-out;
         }
+
+        #chat-roadmap .photo-gallery {
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        #chat-roadmap .photo-item {
+            margin-bottom: 1.5rem;
+        }
+
+        #chat-roadmap .photo-frame {
+            height: auto;
+            max-height: 400px;
+            overflow: hidden;
+        }
+
+        #chat-roadmap .photo-frame img {
+            object-fit: contain;
+        }
+
+        @media (max-width: 768px) {
+            #chat-roadmap .photo-frame {
+                max-height: 250px;
+            }
+        }
     </style>
 </head>
+
 <body>
     <!-- Progress Bar -->
     <div class="progress-container">
@@ -508,15 +551,16 @@
     <section id="landing" class="section active">
         <h1>Something Special For You</h1>
         <p>Click on the envelope to see what's inside...</p>
-        
+
         <div class="envelope" id="envelope">
             <div class="letter">
                 <p>Open me ❤️</p>
             </div>
         </div>
-        
+
         <div class="cat-gif">
-            <img src="/api/placeholder/100/100" alt="Cute cat" id="catGif1">
+            <img src="https://media.giphy.com/media/HMSLfCl5BsXoQ/giphy.gif?cid=ecf05e47f8luiz2w4q2ammnphkoodnnp69d5jr90cddxpqwi&ep=v1_gifs_related&rid=giphy.gif&ct=g"
+                alt="Cute cat" id="catGif1">
         </div>
     </section>
 
@@ -529,87 +573,89 @@
                 </p>
             </div>
         </div>
-        
+
         <button class="btn" id="nextFromLetter">See our story</button>
-        
+
         <div class="cat-gif" style="bottom: 10px; left: 20px;">
-            <img src="/api/placeholder/100/100" alt="Cute cat" id="catGif2">
+            <img src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExemp6aHp6emwyZm9oa3B1cmZ1enl0em4yOTJrOWkxMG90MmpscTR5dyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/njtPBlbYnHAHK/giphy.gif"
+                alt="Cute cat" id="catGif2">
         </div>
     </section>
 
     <!-- Chat Roadmap -->
     <section id="chat-roadmap" class="section">
         <h2>Our Journey Together</h2>
-        
-        <div class="timeline" id="timeline">
-            <!-- Chat screenshots will be added here -->
-            <div class="chat-item">
-                <div class="chat-screenshot">
-                    <img src="/api/placeholder/250/150" alt="Chat screenshot" id="chat1">
+
+        <div class="photo-gallery">
+            <div class="photo-item">
+                <div class="photo-frame">
+                    <img src="11.jpg" alt="Chat screenshot" id="chat1">
                 </div>
-                <p class="chat-caption">Where it all began ❤️</p>
+                <p class="photo-caption">Where it all began ❤️</p>
             </div>
-            
-            <div class="chat-item">
-                <div class="chat-screenshot">
-                    <img src="/api/placeholder/250/150" alt="Chat screenshot" id="chat2">
+
+            <div class="photo-item">
+                <div class="photo-frame">
+                    <img src="22.jpg" alt="Chat screenshot" id="chat2">
                 </div>
-                <p class="chat-caption">Our first late night talk 🌙</p>
+                <p class="photo-caption">That moment I knew 💕</p>
             </div>
-            
-            <div class="chat-item">
-                <div class="chat-screenshot">
-                    <img src="/api/placeholder/250/150" alt="Chat screenshot" id="chat3">
+
+            <div class="photo-item">
+                <div class="photo-frame">
+                    <img src="33.jpg" alt="Chat screenshot" id="chat3">
                 </div>
-                <p class="chat-caption">Making each other laugh 😂</p>
+                <p class="photo-caption">The way she replied 😭</p>
             </div>
-            
-            <div class="chat-item">
-                <div class="chat-screenshot">
-                    <img src="/api/placeholder/250/150" alt="Chat screenshot" id="chat4">
+
+            <div class="photo-item">
+                <div class="photo-frame">
+                    <img src="44.jpg" alt="Chat screenshot" id="chat4">
                 </div>
-                <p class="chat-caption">That moment I knew 💕</p>
+                <p class="photo-caption">Making each other blush 🤭</p>
             </div>
         </div>
-        
+
         <button class="btn" id="nextFromChat">See more</button>
-        
+
         <div class="cat-gif" style="top: 20px; right: 20px;">
-            <img src="/api/placeholder/100/100" alt="Cute cat" id="catGif3">
+            <img src="https://media.giphy.com/media/kKeJ4JuNkaEZbkPOOL/giphy.gif?cid=ecf05e47xbypeg4d85rit5hse04i0d4et85q8a1a5qrefj6b&ep=v1_gifs_related&rid=giphy.gif&ct=g"
+                alt="Cute cat" id="catGif3">
         </div>
     </section>
 
     <!-- Photo Compliments -->
     <section id="photos" class="section">
         <h2>You Are Amazing</h2>
-        
+
         <div class="photo-gallery">
             <div class="photo-item">
                 <div class="photo-frame">
-                    <img src="/api/placeholder/600/300" alt="Your photo" id="photo1">
+                    <img src="1.jpg" alt="Your photo" id="photo1">
                 </div>
                 <p class="photo-caption">Prettiest girl I've ever seen</p>
             </div>
-            
+
             <div class="photo-item">
                 <div class="photo-frame">
-                    <img src="/api/placeholder/600/300" alt="Your photo" id="photo2">
+                    <img src="2.jpg" alt="Your photo" id="photo2">
                 </div>
                 <p class="photo-caption">My entire explore page is jealous</p>
             </div>
-            
+
             <div class="photo-item">
                 <div class="photo-frame">
-                    <img src="/api/placeholder/600/300" alt="Your photo" id="photo3">
+                    <img src="3.jpg" alt="Your photo" id="photo3">
                 </div>
                 <p class="photo-caption">I could stare at your smile all day</p>
             </div>
         </div>
-        
+
         <button class="btn" id="nextFromPhotos">Listen to something special</button>
-        
+
         <div class="cat-gif" style="bottom: 20px; left: 20px; transform: rotate(10deg);">
-            <img src="/api/placeholder/100/100" alt="Cute cat" id="catGif4">
+            <img src="https://media.giphy.com/media/cBncDNrdxga2I/giphy.gif?cid=ecf05e47smj7vtqtsejx9gj18rfipyl10zg9w0ia6ddortzb&ep=v1_gifs_related&rid=giphy.gif&ct=g"
+                alt="Cute cat" id="catGif4">
         </div>
     </section>
 
@@ -617,22 +663,23 @@
     <section id="voice-note" class="section">
         <h2>Just For You</h2>
         <p>Here's something from my heart...</p>
-        
+
         <div class="audio-player">
             <div class="play-button" id="playButton">
                 <i class="fas fa-play"></i>
             </div>
         </div>
-        
+
         <audio id="voiceNote" preload="auto">
             <!-- Voice note audio file will be added here -->
-            <source src="" type="audio/mpeg">
+            <source src="aud-VEED.mp3" type="audio/mpeg">
         </audio>
-        
+
         <button class="btn" id="nextFromVoice">Continue to something special</button>
-        
+
         <div class="cat-gif" style="top: 50%; right: 20px; transform: translateY(-50%);">
-            <img src="/api/placeholder/100/100" alt="Cute cat listening" id="catGif5">
+            <img src="https://media.giphy.com/media/UZz8BikCqfYzK/giphy.gif?cid=ecf05e47ol1rq448j217oclygc8eflxjru6ewapgyovpad5l&ep=v1_gifs_related&rid=giphy.gif&ct=g"
+                alt="Cute cat listening" id="catGif5">
         </div>
     </section>
 
@@ -642,15 +689,16 @@
             <h2>The Big Question</h2>
             <p class="proposal-text">Will you be my girlfriend?</p>
             <p class="proposal-subtext">(Even though you already live in my heart rent-free)</p>
-            
+
             <div class="proposal-buttons">
                 <button class="btn" id="yesBtn">Yes ❤️</button>
                 <button class="btn" id="definitelyBtn">Definitely Yes 😍</button>
             </div>
         </div>
-        
+
         <div class="cat-gif" style="top: 20px; left: 20px;">
-            <img src="/api/placeholder/100/100" alt="Cute cat" id="catGif6">
+            <img src="https://media.giphy.com/media/kKeJ4JuNkaEZbkPOOL/giphy.gif?cid=ecf05e47xbypeg4d85rit5hse04i0d4et85q8a1a5qrefj6b&ep=v1_gifs_related&rid=giphy.gif&ct=g"
+                alt="Cute cat" id="catGif6">
         </div>
     </section>
 
@@ -660,22 +708,23 @@
             <i class="fas fa-heart"></i>
         </div>
         <h1>You've made me the happiest person!</h1>
-        <p>Thank you for saying yes ❤️</p>
-        
+        <p>Thank you for saying yes ❤️😭</p>
+
         <div class="cat-gif" style="bottom: 20px; right: 20px; transform: rotate(-10deg);">
-            <img src="/api/placeholder/100/100" alt="Dancing cat" id="catGif7">
+            <img src="https://media.giphy.com/media/g7YDlrD5YLqfe/giphy.gif?cid=ecf05e47dvyeqbhuzlbt4fistk9cmib2yzydx470fe68nsz4&ep=v1_gifs_related&rid=giphy.gif&ct=g"
+                alt="Dancing cat" id="catGif7">
         </div>
     </section>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/confetti-js/0.0.18/confetti.min.js"></script>
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             // Variables for sections
             const sections = Array.from(document.querySelectorAll('.section'));
             const navigationDots = document.getElementById('navigation');
             const progressBar = document.getElementById('progressBar');
             let currentSection = 0;
-            
+
             // Create navigation dots
             sections.forEach((section, index) => {
                 const dot = document.createElement('div');
@@ -704,16 +753,16 @@
 
             function navigateToSection(index) {
                 if (index < 0 || index >= sections.length) return;
-                
+
                 // Scroll to top before changing sections
                 window.scrollTo(0, 0);
-                
+
                 sections[currentSection].classList.remove('active');
                 sections[index].classList.add('active');
                 currentSection = index;
                 updateNavDots();
                 updateProgressBar();
-                
+
                 // For the success page special case
                 if (index === sections.length - 1) {
                     document.getElementById('success').style.display = 'flex';
@@ -726,7 +775,7 @@
 
             // Envelope animation
             const envelope = document.getElementById('envelope');
-            envelope.addEventListener('click', function() {
+            envelope.addEventListener('click', function () {
                 this.classList.add('open');
                 setTimeout(() => {
                     nextSection();
@@ -735,13 +784,13 @@
 
             // Letter typewriter effect
             const letterText = document.getElementById('letterText');
-            const letterContent = `Dear [Her Name],
+            const letterContent = `Dear Shanu 💖 ,
 
 From the first message to our endless conversations, you've brought so much joy into my life. Your smile, your laugh, your kindness - everything about you makes my heart skip a beat.
 
-Every morning I wake up excited to talk to you, and every night I fall asleep with thoughts of you. You've become my favorite person, my confidant, and someone I can't imagine not having in my life.
+Every morning I wake up excited to chat with you, and every night I fall asleep with thoughts of you. You've become my favorite person, my confidant, and someone I can't imagine not having in my life.
 
-I've prepared this little journey through our memories to show you just how special you are to me...`;
+I've prepared this little journey through our memories to show you just how special you are to me 😉`;
 
             let i = 0;
             const typeWriter = () => {
@@ -763,7 +812,7 @@ I've prepared this little journey through our memories to show you just how spec
             const voiceNote = document.getElementById('voiceNote');
             const playIcon = playButton.querySelector('i');
 
-            playButton.addEventListener('click', function() {
+            playButton.addEventListener('click', function () {
                 if (voiceNote.paused) {
                     voiceNote.play();
                     playIcon.classList.remove('fa-play');
@@ -775,7 +824,7 @@ I've prepared this little journey through our memories to show you just how spec
                 }
             });
 
-            voiceNote.addEventListener('ended', function() {
+            voiceNote.addEventListener('ended', function () {
                 playIcon.classList.remove('fa-pause');
                 playIcon.classList.add('fa-play');
             });
@@ -785,26 +834,70 @@ I've prepared this little journey through our memories to show you just how spec
             const successSection = document.getElementById('success');
 
             function celebrateSuccess() {
-                // Display confetti
+                // First make sure the confetti canvas is visible and correctly positioned
                 confettiCanvas.style.display = 'block';
-                const confettiSettings = { target: 'confetti-canvas', max: 200, size: 1.5, animate: true, props: ['circle', 'square', 'triangle', 'line'], colors: [[165, 104, 246], [230, 61, 135], [0, 199, 228], [253, 214, 126]], clock: 25 };
-                const confetti = new ConfettiGenerator(confettiSettings);
-                confetti.render();
+                confettiCanvas.style.position = 'fixed';
+                confettiCanvas.style.top = '0';
+                confettiCanvas.style.left = '0';
+                confettiCanvas.style.width = '100%';
+                confettiCanvas.style.height = '100%';
+                confettiCanvas.style.zIndex = '9999';
 
-                // Show success message
-                successSection.style.display = 'flex';
-                
-                // First scroll to top, then navigate to the success section
-                window.scrollTo(0, 0);
-                setTimeout(() => {
-                    navigateToSection(sections.length - 1);
-                }, 100);
+                // Set up and render confetti
+                const confettiSettings = {
+                    target: 'confetti-canvas',
+                    max: 200,
+                    size: 1.5,
+                    animate: true,
+                    props: ['circle', 'square', 'triangle', 'line'],
+                    colors: [[165, 104, 246], [230, 61, 135], [0, 199, 228], [253, 214, 126]],
+                    clock: 25
+                };
 
-                // Stop confetti after 3 seconds
-                setTimeout(() => {
-                    confetti.clear();
-                    confettiCanvas.style.display = 'none';
-                }, 3000);
+                try {
+                    const confetti = new ConfettiGenerator(confettiSettings);
+                    confetti.render();
+
+                    // Show success section
+                    document.getElementById('success').style.display = 'flex';
+
+                    // Switch to success section
+                    window.scrollTo(0, 0);
+
+                    // Navigate to success section with small delay to ensure smooth transition
+                    setTimeout(() => {
+                        // Hide all sections first
+                        document.querySelectorAll('.section').forEach(section => {
+                            section.classList.remove('active');
+                        });
+
+                        // Show success section
+                        document.getElementById('success').classList.add('active');
+
+                        // Update current section index to the last one
+                        currentSection = sections.length - 1;
+
+                        // Update navigation dots
+                        updateNavDots();
+                        updateProgressBar();
+                    }, 100);
+
+                    // Stop confetti after 3 seconds
+                    setTimeout(() => {
+                        confetti.clear();
+                        confettiCanvas.style.display = 'none';
+                    }, 3000);
+                } catch (e) {
+                    console.error("Error with confetti:", e);
+
+                    // Fallback if confetti fails - still show success section
+                    document.getElementById('success').style.display = 'flex';
+                    sections.forEach(section => section.classList.remove('active'));
+                    document.getElementById('success').classList.add('active');
+                    currentSection = sections.length - 1;
+                    updateNavDots();
+                    updateProgressBar();
+                }
             }
 
             document.getElementById('yesBtn').addEventListener('click', celebrateSuccess);
@@ -812,18 +905,18 @@ I've prepared this little journey through our memories to show you just how spec
 
             // Section-specific initializations
             sections.forEach((section, index) => {
-                section.addEventListener('transitionend', function() {
+                section.addEventListener('transitionend', function () {
                     if (index === 1 && this.classList.contains('active')) {
                         // Start typewriter when letter section becomes active
                         setTimeout(typeWriter, 500);
                     }
                 });
             });
-            
+
             // Fix for mobile browsers - ensure buttons work properly with touchstart
             const allButtons = document.querySelectorAll('.btn');
             allButtons.forEach(button => {
-                button.addEventListener('touchstart', function(e) {
+                button.addEventListener('touchstart', function (e) {
                     e.preventDefault();
                     this.click();
                 });
@@ -832,6 +925,40 @@ I've prepared this little journey through our memories to show you just how spec
             // Initialize progress bar
             updateProgressBar();
         });
+        document.addEventListener('DOMContentLoaded', function() {
+    // Make sure these are added even if the other DOMContentLoaded events fire
+    const yesBtn = document.getElementById('yesBtn');
+    const definitelyBtn = document.getElementById('definitelyBtn');
+    
+    if (yesBtn) {
+        yesBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            celebrateSuccess();
+        });
+        
+        // Add touchstart for mobile
+        yesBtn.addEventListener('touchstart', function(e) {
+            e.preventDefault();
+            celebrateSuccess();
+        });
+    }
+    
+    if (definitelyBtn) {
+        definitelyBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            celebrateSuccess();
+        });
+        
+        // Add touchstart for mobile
+        definitelyBtn.addEventListener('touchstart', function(e) {
+            e.preventDefault();
+            celebrateSuccess();
+        });
+    }
+});
     </script>
 </body>
+
 </html>
